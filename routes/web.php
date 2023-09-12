@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Controller
+
+use App\Http\Controllers\Guest\TrainController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [TrainController::class,'home'])->name('home');
