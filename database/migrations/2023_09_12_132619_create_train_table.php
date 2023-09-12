@@ -25,7 +25,7 @@ return new class extends Migration
 
             $table->time('arrival_time', 2)->nullable(false);
 
-            $table->string('train_code', 8)->nullable(false);
+            $table->string('train_code', 9)->nullable(false);
 
             $table->unsignedTinyInteger('cart_number')->nullable(false);
 
@@ -35,7 +35,6 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique('train_code');
 
         });
     }
@@ -45,6 +44,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('train');
+        Schema::dropIfExists('trains');
     }
 };
